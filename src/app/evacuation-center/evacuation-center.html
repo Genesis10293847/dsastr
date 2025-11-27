@@ -8,7 +8,8 @@
         <input type="number" [value]="centercapacity()" (input)="centercapacity.set($any($event.target).valueAsNumber)"
             placeholder="Capacity" style="flex: 1; min-width: 120px;">
         <input type="number" [value]="centercurrentPopulation()"
-            (input)="centercurrentPopulation.set($any($event.target).valueAsNumber)" placeholder="Current Population" style="flex: 1; min-width: 120px;">
+            (input)="centercurrentPopulation.set($any($event.target).valueAsNumber)" 
+            placeholder="Current Population" style="flex: 1; min-width: 120px;">
         <input type="text" [value]="centerstatus()" (input)="centerstatus.set($any($event.target).value)"
             placeholder="Status" style="flex: 1; min-width: 120px;">
         <button (click)="addcenter()" style="align-self: center;">Add</button>

@@ -12,7 +12,7 @@ import { user } from '@angular/fire/auth';
   styleUrl: './relief-distribution.css',
 })
 export class ReliefDistribution {
-  title = signal('Municipal Disaster Response Information System Using Angular and Firebase');
+  title = signal('Relief Distribution');
 
   reliefbarangay = signal('');
   reliefdate = signal('');

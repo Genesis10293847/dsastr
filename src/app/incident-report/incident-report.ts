@@ -12,7 +12,7 @@ import { user } from '@angular/fire/auth';
   styleUrl: './incident-report.css',
 })
 export class IncidentReport {
-  title = signal('Municipal Disaster Response Information System Using Angular and Firebase');
+  title = signal('Incident Report');
 
   incidentlocation = signal('');
   incidentdate = signal('');

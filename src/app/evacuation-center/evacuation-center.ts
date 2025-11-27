@@ -12,7 +12,7 @@ import { user } from '@angular/fire/auth';
   styleUrl: './evacuation-center.css',
 })
 export class EvacuationCenter {
-  title = signal('Municipal Disaster Response Information System Using Angular and Firebase');
+  title = signal('Evacuation Center');
 
   centername = signal('');
   centerbarangay = signal('');
@@ -45,7 +45,7 @@ export class EvacuationCenter {
       this.centercurrentPopulation.set(0);
       this.centerstatus.set('');
     } else {
-      alert('Please fill in all fields');
+      alert('null');
     }
   }
 
