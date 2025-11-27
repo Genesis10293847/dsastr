@@ -1,0 +1,27 @@
+<div style="text-align:center; margin-top:20px;">
+    <h1>{{ title() }}</h1>
+    <div style="padding: 2px; margin: 2px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+        <input type="text" [value]="incidentlocation()" (input)="incidentlocation.set($any($event.target).value)"
+            placeholder="Location" style="flex: 1; min-width: 150px;">
+        <input type="date" [value]="incidentdate()" (input)="incidentdate.set($any($event.target).value)"
+            placeholder="Date" style="flex: 1; min-width: 150px;">
+        <input type="text" [value]="incidentType()" (input)="incidentType.set($any($event.target).value)"
+            placeholder="Incident Type" style="flex: 1; min-width: 150px;">
+        <input type="text" [value]="incidentdamageLevel()" (input)="incidentdamageLevel.set($any($event.target).value)"
+            placeholder="Damage Level" style="flex: 1; min-width: 150px;">
+        <input type="text" [value]="incidentremarks()" (input)="incidentremarks.set($any($event.target).value)"
+            placeholder="Remarks" style="flex: 1; min-width: 150px;">
+        <button (click)="addincident()" style="align-self: center;">Add</button>
+    </div>
+    <hr>
+
+    <div *ngFor="let item of incedent" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 10px 0;">
+        <input [value]="item.location" (input)="item.location = $any($event.target).value" style="flex: 1; min-width: 120px;">
+        <input [value]="item.date" (input)="item.date = $any($event.target).value" style="flex: 1; min-width: 120px;">
+        <input [value]="item.type" (input)="item.type = $any($event.target).value" style="flex: 1; min-width: 120px;">
+        <input [value]="item.damage" (input)="item.damage = $any($event.target).value" style="flex: 1; min-width: 120px;">
+        <input [value]="item.remarks" (input)="item.remarks = $any($event.target).value" style="flex: 1; min-width: 120px;">
+        <button (click)="updateincident(item.id, item.location, item.date, item.type, item.damage, item.remarks)">Update</button>
+        <button (click)="deleteincident(item.id)">Delete</button>
+    </div>
+</div>

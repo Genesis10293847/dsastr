@@ -1,0 +1,39 @@
+<p>evacuation-center works!</p>
+<div style="text-align:center; margin-top:20px;">
+    <h1>{{ title() }}</h1>
+    <!-- Add Incident Area
+-->
+    <div style="padding: 2px; margin: 2px;">
+        <input type="text" [value]="centername()" (input)="centername.set($any($event.target).value)"
+            placeholder="Location">
+        <br>
+        <input type="date" [value]="centerbarangay()" (input)="centerbarangay.set($any($event.target))"
+            placeholder="Date">
+        <br>
+        <input type="text" [value]="centercapacity()" (input)="centercapacity.set($any($event.target).value)"
+            placeholder="Course">
+        <br>
+        <input type="text" [value]="centercurrentPopulation()"
+            (input)="centercurrentPopulation.set($any($event.target).value)" placeholder="Email">
+        <br>
+        <input type="text" [value]="centerstatus()" (input)="centerstatus.set($any($event.target).value)"
+            placeholder="Username">
+        <br>
+        <br><br>
+        <button (click)="addcenter()">Add</button>
+    </div>
+    <hr>
+
+    <!-- List Students Area-->
+    <div *ngFor="let center of center" style="flex-wrap: wrap;">
+        <input [value]="center.name" (input)="center.name= $any($event.target).value">
+        <input [value]="center.barangay" (input)="center.barangay= $any($event.target).value">
+        <input [value]="center.capacity" (input)="center.capacity = $any($event.target).value">
+        <input [value]="center.population" (input)="center.population = $any($event.target).value">
+        <input [value]="center.status" (input)="center.status = $any($event.target).value">
+
+        <button
+            (click)="updatecenter(center.id, center.name, center.date, center.capacity, center.population, center.status)">Update</button>
+        <button (click)="deletecenter(center.id)">Delete</button>
+    </div>
+</div>

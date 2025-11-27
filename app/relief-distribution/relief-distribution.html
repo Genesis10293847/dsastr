@@ -1,0 +1,35 @@
+<div style="text-align:center; margin-top:20px;">
+    <h1>{{ title() }}</h1>
+
+    <div style="padding: 2px; margin: 2px;">
+        <input type="text" [value]="reliefbarangay()" (input)="reliefbarangay.set($any($event.target).value)"
+            placeholder="Location">
+        <br>
+        <input type="date" [value]="reliefdate()" (input)="reliefdate.set($any($event.target).value)" placeholder="Date">
+        <br>
+        <input type="text" [value]="reliefnumberOfFamilies()"
+            (input)="reliefnumberOfFamilies.set($any($event.target).valueAsNumber)" placeholder="Course">
+        <br>
+        <input type="text" [value]="reliefdistributedBy()" (input)="reliefdistributedBy.set($any($event.target).value)"
+            placeholder="Email">
+        <br>
+        <input type="text" [value]="reliefItems()" (input)="reliefItems.set($any($event.target).value)"
+            placeholder="Username">
+        <br>
+        <br><br>
+        <button (click)="addrelief()">Add</button>
+    </div>
+    <hr>
+
+    <div *ngFor="let item of relief" style="flex-wrap: wrap;">
+        <input [value]="item.barangay" (input)="item.barangay= $any($event.target).value">
+        <input [value]="item.date" (input)="item.date = $any($event.target).value">
+        <input [value]="item.families" (input)="item.families = $any($event.target).value">
+        <input [value]="item.items" (input)="item.items = $any($event.target).value">
+        <input [value]="item.distributed" (input)="item.distributed = $any($event.target).value">
+
+        <button
+            (click)="updaterelief(item.id, item.barangay, item.date, item.families, item.items, item.distributed)">Update</button>
+        <button (click)="deleterelief(item.id)">Delete</button>
+    </div>
+</div>

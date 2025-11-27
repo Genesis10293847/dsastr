@@ -1,0 +1,27 @@
+<div style="text-align:center; margin-top:20px;">
+    <h1>{{ title() }}</h1>
+    <div style="padding: 2px; margin: 2px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+        <input type="text" [value]="centername()" (input)="centername.set($any($event.target).value)"
+            placeholder="Center Name" style="flex: 1; min-width: 120px;">
+        <input type="text" [value]="centerbarangay()" (input)="centerbarangay.set($any($event.target).value)"
+            placeholder="Barangay" style="flex: 1; min-width: 120px;">
+        <input type="number" [value]="centercapacity()" (input)="centercapacity.set($any($event.target).valueAsNumber)"
+            placeholder="Capacity" style="flex: 1; min-width: 120px;">
+        <input type="number" [value]="centercurrentPopulation()"
+            (input)="centercurrentPopulation.set($any($event.target).valueAsNumber)" placeholder="Current Population" style="flex: 1; min-width: 120px;">
+        <input type="text" [value]="centerstatus()" (input)="centerstatus.set($any($event.target).value)"
+            placeholder="Status" style="flex: 1; min-width: 120px;">
+        <button (click)="addcenter()" style="align-self: center;">Add</button>
+    </div>
+    <hr>
+
+    <div *ngFor="let item of center" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 10px 0;">
+        <input [value]="item.name" (input)="item.name= $any($event.target).value" style="flex: 1; min-width: 100px;">
+        <input [value]="item.barangay" (input)="item.barangay= $any($event.target).value" style="flex: 1; min-width: 100px;">
+        <input type="number" [value]="item.capacity" (input)="item.capacity = $any($event.target).valueAsNumber" style="flex: 1; min-width: 100px;">
+        <input type="number" [value]="item.population" (input)="item.population = $any($event.target).valueAsNumber" style="flex: 1; min-width: 100px;">
+        <input [value]="item.status" (input)="item.status = $any($event.target).value" style="flex: 1; min-width: 100px;">
+        <button (click)="updatecenter(item.id, item.name, item.barangay, item.capacity, item.population, item.status)">Update</button>
+        <button (click)="deletecenter(item.id)">Delete</button>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+:root {
+  --brand: #0d6efd;
+}
+.card {
+  border-radius: .6rem;
+}
+footer {
+  margin-top: auto;
+}
